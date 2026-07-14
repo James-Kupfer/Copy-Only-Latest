@@ -1,5 +1,7 @@
 # copy_only_latest
 
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+
 A minimal Python utility that consolidates one or more source directory
 trees into a destination root, copying only files that are **newer** than
 what already exists at the destination.
@@ -22,10 +24,18 @@ without overwriting files that are already current.
 ## Requirements
 
 - Python 3.7+ (standard library only)
+- No Windows dependency — the code itself is OS-portable (uses `os.walk` /
+  `shutil.copy2`), though the example paths below are Windows-style since
+  that's this tool's primary use case.
 
 ---
 
 ## Configuration
+
+```bash
+git clone https://github.com/James-Kupfer/Copy-Only-Latest.git
+cd Copy-Only-Latest
+```
 
 Open `copy_only_latest.py` and edit the two variables near the top of the
 file — these are the **only lines you need to change**:
@@ -90,3 +100,9 @@ col.SRC_FOLDERS = [r"D:\backup\Documents"]
 col.DST_ROOT    = r"C:\Documents"
 col.consolidate()
 ```
+
+---
+
+## License
+
+Apache License 2.0 — see [LICENSE](LICENSE).
